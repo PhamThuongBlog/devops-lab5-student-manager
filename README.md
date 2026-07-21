@@ -1,3 +1,3 @@
 "# Student Manager" 
 "" 
-"?ng d?ng qu?n ly sinh viˆn - DevOps Lab 5" 
+"Ung dung quan  ly sinh viï¿½n - DevOps Lab 5" - Dev A them dong nay
