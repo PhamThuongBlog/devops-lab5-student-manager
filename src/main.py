@@ -42,6 +42,16 @@ def main():
     # Chỉ sửa tuổi của SV001
     students = update_student(students, "SV001", age=21)
 
+
+    # Xóa SV003
+    students = delete_student(students, "SV003")
+
+    for student in students:
+        print(f"  {student}")
+
+    print(f"\nTotal: {len(students)} students")
+
+
 def search_student(students: list, keyword: str) -> list:
     """Tìm kiếm sinh viên theo tên hoặc mã.
 
@@ -115,7 +125,14 @@ def update_student(
 
     raise ValueError(f"Không tìm thấy sinh viên: {student_id}")
 
+def delete_student(students, student_id: str):
+    """Xóa sinh viên theo mã."""
+    for index, student in enumerate(students):
+        if student.student_id == student_id:
+            students.pop(index)
+            return students
 
+    raise ValueError(f"Không tìm thấy sinh viên: {student_id}")
 
 if __name__ == "__main__":
     main()
