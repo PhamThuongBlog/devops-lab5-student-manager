@@ -30,6 +30,18 @@ def main():
     print("\n--- Tìm kiếm ---")
     search_student(students, "Van")
 
+    # Sửa tên, tuổi và lớp của SV002
+    students = update_student(
+        students,
+        "SV002",
+        name="Tran Thi Bich",
+        age=22,
+        grade="K21",
+    )
+
+    # Chỉ sửa tuổi của SV001
+    students = update_student(students, "SV001", age=21)
+
 def search_student(students: list, keyword: str) -> list:
     """Tìm kiếm sinh viên theo tên hoặc mã.
 
@@ -79,6 +91,31 @@ def add_student(students: list, student_id: str, name: str, age: int, grade: str
     students.append(new_student)
     print(f"Đã thêm sinh viên: {new_student}")
     return students
+
+def update_student(
+    students,
+    student_id: str,
+    name: str = None,
+    age: int = None,
+    grade: str = None,
+):
+    """Sửa sinh viên theo mã, chỉ cập nhật thông tin được truyền vào."""
+    for student in students:
+        if student.student_id == student_id:
+            if name is not None:
+                student.name = name
+
+            if age is not None:
+                student.age = age
+
+            if grade is not None:
+                student.grade = grade
+
+            return students
+
+    raise ValueError(f"Không tìm thấy sinh viên: {student_id}")
+
+
 
 if __name__ == "__main__":
     main()
