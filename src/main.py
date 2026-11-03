@@ -24,28 +24,37 @@ def main():
     for student in students:
         print(f"  {student}")
 
-    print(f"\nTotal: {len(students)} students")
+    print(f"\nTotal: {len(students)} students after add student")
 
     # Tìm kiếm sinh viên
     print("\n--- Tìm kiếm ---")
     search_student(students, "Van")
 
-    # Sửa tên, tuổi và lớp của SV002
+    # Sửa tên, tuổi và lớp của SV004
+    print("\n--- Sửa tên, tuổi, lớp của SV004 ---")
     students = update_student(
         students,
-        "SV002",
+        "SV004",
         name="Tran Thi Bich",
         age=22,
         grade="K21",
     )
 
-    # Chỉ sửa tuổi của SV001
-    students = update_student(students, "SV001", age=21)
+    print("\n--- Danh sách SV gồm SV004 sau sửa tên, tuổi, lớp: ---")
+    for student in students:
+        print(f"  {student}")
+
+    # Chỉ sửa tuổi của SV004
+    print("\n--- Chỉ sửa tuổi của SV004 ---")
+    students = update_student(students, "SV004", age=21)
 
 
-    # Xóa SV003
-    students = delete_student(students, "SV003")
+    # Xóa SV004
+    print("\n--- Xóa sinh viên SV004 ---")
+    students = delete_student(students, "SV004")
 
+    
+    print("\n--- Danh sách SV sau xóa SV004: ---")
     for student in students:
         print(f"  {student}")
 
