@@ -48,6 +48,10 @@ def main():
     print("\n--- Chỉ sửa tuổi của SV004 ---")
     students = update_student(students, "SV004", age=21)
 
+    print("\n--- Danh sách sinh vien sau khi sửa tuổi của SV004 ---")
+    for student in students:
+        print(f"  {student}")
+
 
     # Xóa SV004
     print("\n--- Xóa sinh viên SV004 ---")
